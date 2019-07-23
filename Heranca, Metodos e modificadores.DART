@@ -19,6 +19,12 @@ class Cachorro extends Animal {
     fofura += 10;
     print("Fofura do $nome aumentou para $fofura e peso: $peso kg !!!");
   }
+  @override
+  void fazerSom() => print("$nome fez au au!");
+  
+    @override
+  String toString()=>"Cachorro | Nome: $nome,Peso: $peso, Fofura: $fofura";
+
 }
 
 class Gato extends Animal {
@@ -26,6 +32,12 @@ class Gato extends Animal {
   Gato(String nome, double peso): super(nome, peso);
   
   bool estaAmigavel() => true;
+  
+  @override
+  void fazerSom() => print("$nome fez miau!");
+  
+  @override
+  String toString()=>"Gato | Nome: $nome,Peso: $peso";
 }
 
 void main() {
@@ -34,10 +46,11 @@ void main() {
   cachorro.fazerSom();
   cachorro.comer();
   cachorro.brincar();
+  print(cachorro);
   
   Gato gato = Gato("cat", 10.0);
   gato.fazerSom();
   gato.comer();
   print("Esta amigavel? ${gato.estaAmigavel()}");
-  
+  print(gato);
 }
